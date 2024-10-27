@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Request</title>
+    <link rel="icon" href="img/logo.jpg" />
+    <link rel="stylesheet" href="css/care-requester.css" />
+  </head>
+  <body>
+    <main>
+      <marquee behavior="scrolling" direction="right">UNDER CONSTRUCTION: Our Website Is Under Construction And Trying To Bring It Soon For You All</marquee>
+      <form id="serviceRequestForm" action="">
+        <div class="service-requested">
+          <div style="padding: 10px 0px 10px 0px">
+            <b>Number Of Services-Requested</b>
+          </div>
+          <!-- Display requested service details -->
+          <div
+            class="requested-service"
+            id="requestedServiceDetails"
+            style="display: none"
+          >
+            <div><b>Requested Service Details</b></div>
+            <p id="serviceDetails"></p>
+          </div>
+
+          <!-- List of service requests -->
+          <ul id="serviceRequestsList">
+            <!-- List items will be added dynamically by JavaScript -->
+          </ul>
+        </div>
+        <button type="button" class="create-form" onclick="toggleForm()">
+          Request Service
+        </button>
+        <hr />
+        <div
+          id="service-request-form"
+          class="service-request"
+          style="display: none"
+        >
+          <div><b>Service Request Form</b></div>
+          <select name="services" id="services">
+            <option value="" selected disabled>Select The Services</option>
+            <option value="Hospital care services">
+              Hospital care services
+            </option>
+            <option value="Dog care">Dog care</option>
+            <option value="baby sitting">Baby sitting</option>
+            <option value="House painting">House painting</option>
+            <option value="Electrician">Electrician</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Lost and Found">Lost and Found</option>
+            <option value="Others">Others</option>
+          </select>
+          <br />
+          <input type="text" placeholder="Description" id="description" />
+          <br />
+          <input type="text" placeholder="Street Address" id="address" />
+          <br />
+          <input type="text" placeholder="City" id="city" />
+          <br />
+          <input type="text" placeholder="State" id="state" />
+          <br />
+          <input type="text" placeholder="Pincode" id="pincode" />
+          <br />
+          <select name="service-type" id="service-type">
+            <option value="" selected disabled>Select The Service Type</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+          </select>
+          <br />
+          <input
+            type="number"
+            placeholder="Service-Hours"
+            min="0"
+            max="24"
+            id="service-hours"
+          />
+          <br />
+          <input
+            type="number"
+            placeholder="Service-Days"
+            min="0"
+            max="365"
+            id="service-days"
+          />
+          <br />
+          <label for="start-time">Start Time</label>
+          <input type="time" id="start-time" />
+          <br />
+          <label for="end-time">End Time</label>
+          <input type="time" id="end-time" />
+          <br />
+          <label for="deadline">DeadLine</label>
+          <input type="datetime-local" placeholder="Deadline" id="deadline" />
+          <br />
+          <button type="submit" class="create-form">Submit</button>
+        </div>
+      </form>
+    </main>
+    <script src="./js/care-requester.js"></script>
+  </body>
+</html>

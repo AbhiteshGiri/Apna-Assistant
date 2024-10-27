@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Requested Services</title>
+    <link rel="icon" href="img/logo.jpg" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      main {
+        text-align: center;
+      }
+      #jobListings {
+        max-width: 800px;
+        max-height: 400px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .job-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+      .apply-button {
+        display: block;
+        margin: 10px auto;
+        padding: 8px 16px;
+        background-color: rgb(255, 90, 0);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+      .apply-button:hover {
+        background-color: rgb(255, 99, 0);
+      }
+      #searchBar {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+      }
+      marquee{
+          font-size: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-weight: 700;
+          color:white;
+          background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+     
+      <h1>Requested Services</h1>
+      <input
+        type="text"
+        id="searchBar"
+        placeholder="Search by job title..."
+        oninput="filterJobs()"
+      />
+      <div id="jobListings">
+        <!-- Job listings will be added dynamically by JavaScript -->
+      </div>
+      <script src="./js/availableService.js"></script>
+    </main>
+  </body>
+</html>

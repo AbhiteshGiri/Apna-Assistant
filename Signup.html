@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apna Assistant Signup For Patient</title>
+    <link rel="icon" href="img/logo.jpg" type="jpg" />
+
+    <!--******************************** CSS Code *****************************************************-->
+    <style>
+      body {
+        background-color: #fafafa;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 400px;
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        margin: 0 auto;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+      }
+
+      .logo img {
+        border-radius: 50%;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group b {
+        color: red;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="file"],
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="file"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: rgb(255, 92, 0);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: rgb(248, 135, 70);
+      }
+
+      .links {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .links a {
+        color: #999;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        margin: 0 10px;
+      }
+
+      #otherDocTypeGroup {
+        display: none;
+      }
+      marquee{
+          font-size: 30px;
+          font-family: 'Times New Roman', Times, serif;
+          font-weight: 700;
+          color:white;
+          background-color: blue;
+      }
+      @media only screen and (max-width: 768px) {
+        div.container{
+          position: relative;
+          top: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <marquee behavior="scrolling" direction="right">UNDER CONSTRUCTION: Our Website Is Under Construction And Trying To Bring It Soon For You All</marquee>
+    <div class="container">
+      <div class="logo">
+        <img src="img/logo.jpeg" height="100px" width="100px" alt="Logo" />
+      </div>
+      <form enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="first_name">First Name<b>*</b></label>
+          <input
+            type="text"
+            id="first_name"
+            name="first_name"
+            placeholder="Enter your First Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name<b>*</b></label>
+          <input
+            type="text"
+            id="last_name"
+            name="last_name"
+            placeholder="Enter your Last Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email<b>*</b></label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Enter your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password<b>*</b></label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your Password"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Mobile No.<b>*</b></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="[0-9]{10}"
+            placeholder="Enter your Mobile No."
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="user_type">User Type<b>*</b></label>
+          <select id="user_type" name="user_type" required>
+            <option value="" selected disabled>Select User Type</option>
+            <option value="care_requester">Care Requester</option>
+            <option value="care_provider">Care Provider</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="identification_doc_type"
+            >Identification Document Type<b>*</b></label
+          >
+          <select
+            id="identification_doc_type"
+            name="identification_doc_type"
+            required
+            onchange="showOtherDocType()"
+          >
+            <option value="" selected disabled>
+              Select Identification Document Type
+            </option>
+            <option value="aadhar">Aadhar</option>
+            <option value="pan">PAN</option>
+            <option value="driving_license">Driving License</option>
+            <option value="epic_no">EPIC No</option>
+            <option value="passport">Passport</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+        <div class="form-group" id="otherDocTypeGroup">
+          <label for="otherDocType">Specify Other Document Type<b>*</b></label>
+          <input
+            type="text"
+            id="otherDocType"
+            name="otherDocType"
+            placeholder="Specify Other Document Type"
+          />
+        </div>
+        <div class="form-group">
+          <label for="identification_doc"
+            >Identification Document<b>*</b></label
+          >
+          <input
+            type="file"
+            id="identification_doc"
+            name="identification_doc"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button
+          id="submit"
+          type="submit"
+          class="btn"
+          onclick="handleFormSubmit(event)"
+        >
+          Sign Up
+        </button>
+      </form>
+      <div class="links">
+        Already have an Account?
+        <a href="Login.html">Log In</a>
+      </div>
+    </div>
+    <script src="/js/Signup.js"></script>
+  </body>
+</html>
